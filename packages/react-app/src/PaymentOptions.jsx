@@ -1,43 +1,53 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PaymentOptions.css';
+import Card from './Card';
+import PaymentDetails from './PaymentDetails';
+import CypherPay from './CypherPay';
 
 const PaymentOptions = () => {
+  const navigate = useNavigate();
+  const [selectedMethod, setSelectedMethod] = useState(null);
   const paymentMethods = [
     { name: 'Pay with UPI', method: 'upi' },
     { name: 'Pay with Credit Card', method: 'credit-card' },
     { name: 'Pay with Debit Card', method: 'debit-card' },
-    { name: 'Pay with CipherPay', method: 'cipherpay' },
+    { name: 'Pay with CypherPay', method: 'cipherpay' },
     { name: "Swap Tokens", method: "swap-tokens"},
   ];
-
+  const handleMethodClick = (method) => {
+    setSelectedMethod(method);
+  };
   return (
     <div className="payment-container">
     <div className="payment-options-container">
         <div className="payment-methods">
-          <h2 className='card-heading'>Select Payment Method</h2>
+          <h2 className='card-heading' style={{color:"white"}}>Select Payment Method</h2>
           <ul className='List'>
             {paymentMethods.map((option, index) => (
               <li className="Item" key={index}>
-                <Link style={{color:"white"}} to={`/payment/${option.method}`}>{option.name}</Link>
+                <button
+                  style={{ color: "white", background: "transparent", border: "none", cursor: "pointer" }}
+                  onClick={() => handleMethodClick(option.method)}
+                >
+                  {option.name}
+                </button>
               </li>
             ))}
           </ul>
         </div>
         <div className="card-details" >
-          <h2 className='card-heading'>Card Details</h2>
-              <div className="form">
-              <form action="" style={{width:"100%"}}>
-                <label htmlFor="CardDetails">Card Number</label><br />
-                <input type="text" name='CardDetails'/><br />
-                <label htmlFor="Expiry">Expiry</label><br />
-                <input type="text" name='Expiry'/><br />
-                <label htmlFor="CVV">CVV</label><br />
-                <input type="text" name='CVV'/><br />
-                <button className='btn-grad' style={{width:"90%", height:"9vh", background:"aquamarine", fontWeight:"600", color:"black"}}>Pay</button>
-              </form>
-
-              </div>
+        {selectedMethod === 'credit-card' || selectedMethod === 'debit-card' ? (
+            <Card />
+          ) : selectedMethod === 'cipherpay' ? (
+            <CypherPay />
+          ): selectedMethod === 'swap-tokens' ? (
+            navigate("/payment/swap-tokens")
+          ) : (
+            <PaymentDetails />
+          )
+        }
+          
         </div>
     </div>
     </div>
