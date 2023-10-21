@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.product-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.product-left{
+    width: 40%;
+    height: 100vh;
+    border-bottom-right-radius: 70%;
+    background-color: aquamarine;
+    position: relative;
+}
+.prod-image{
+    position: absolute;
+    right: -12%;
+    bottom: 5%;
+    width: 85%;
+    height: 81%;
+}
+.product-right{
+    padding: 3em;
+    height: 100vh;
+    width: 60%;
+}
+
+.sub-head{
+    font-size: 1.2rem;
+    color: #b2aeae;
+    font-family: 'Poppins', sans-serif;
+
+}
+.heading{
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.description{
+    margin: 0em 2.5em;
+    font-size: 1.2rem;
+}
+
+.button-container{
+    display: flex;
+    margin-top: 6%;
+    padding: 2em;
+}
+
+.btn-grad{
+    background-color: white;
+    width: 40%;
+    margin: 1em;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 1em;
+    transition: all 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+    border: 0px;
+}
+.btn-grad:hover{
+    scale: 1.09;
+}
