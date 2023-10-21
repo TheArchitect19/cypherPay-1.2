@@ -4,6 +4,7 @@ import { abis } from "@my-app/contracts";
 import { ERC20, useContractFunction, useEthers, useTokenAllowance, useTokenBalance } from "@usedapp/core";
 import { ethers } from "ethers";
 import { parseUnits } from "ethers/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 import  { getAvailableTokens, getCounterpartTokens, findPoolByTokens, isOperationPending, getFailureMessage, getSuccessMessage } from '../utils';
 import { ROUTER_ADDRESS } from "../config";
@@ -58,6 +59,7 @@ const Exchange = ({ pools }) => {
     swapApproveSend(ROUTER_ADDRESS, ethers.constants.MaxUint256);
   };
 
+  const navigate = useNavigate();
   // https://docs.uniswap.org/protocol/V2/reference/smart-contracts/router-02#swapexacttokensfortokens
   const onSwapRequested = () => {
     swapExecuteSend(
@@ -68,6 +70,9 @@ const Exchange = ({ pools }) => {
       Math.floor(Date.now() / 1000) + 60 * 20
     ).then((_) => {
       setFromValue("0");
+      if(successMessage){
+        navigate("/payment-options");
+      }
     });
   };
 

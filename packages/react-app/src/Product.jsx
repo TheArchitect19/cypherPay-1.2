@@ -19,7 +19,7 @@ export const Product = () => {
           <h1 className="heading">
             <span className='sub-head'>Electric Ola</span>
             <br />
-          <p style={{marginTop:"0%"}}>
+          <p style={{marginTop:"-2%"}}>
             Effortless. Eco-Friendly. Electric
             
           </p>
@@ -27,6 +27,8 @@ export const Product = () => {
           <p className='description'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate odio quae placeat voluptatum architecto tempora et iste deleniti quaerat commodi! Natus tempora eligendi, corrupti unde eos ipsam dicta impedit dolor voluptatibus mollitia.
           </p>
+
+          <h2 className='text-3xl mt-4 px-12'>In Just <span className="text-5xl text-green-900 font-bold">$999</span></h2>
 
           <div className="button-container">
             <button className='btn-grad'>
