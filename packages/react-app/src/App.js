@@ -29,7 +29,7 @@ const App = () => {
           <div className={styles.exchangeBoxWrapper}>
             <div className={styles.exchangeBox}>
               <div className="pink_gradient" />
-              <div className={styles.exchange}>
+              <div className={styles.exchange} >
                 {account ? (
                   poolsLoading ? (
                     <Loader title="Loading pools, please wait!" />

@@ -70,9 +70,6 @@ const Exchange = ({ pools }) => {
       Math.floor(Date.now() / 1000) + 60 * 20
     ).then((_) => {
       setFromValue("0");
-      if(successMessage){
-        navigate("/payment-options");
-      }
     });
   };
 

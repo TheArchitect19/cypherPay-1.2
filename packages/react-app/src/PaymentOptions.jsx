@@ -9,11 +9,9 @@ const PaymentOptions = () => {
   const navigate = useNavigate();
   const [selectedMethod, setSelectedMethod] = useState(null);
   const paymentMethods = [
-    { name: 'Pay with UPI', method: 'upi' },
     { name: 'Pay with Credit Card', method: 'credit-card' },
     { name: 'Pay with Debit Card', method: 'debit-card' },
     { name: 'Pay with CypherPay', method: 'cipherpay' },
-    { name: "Swap Tokens", method: "swap-tokens"},
   ];
   const handleMethodClick = (method) => {
     setSelectedMethod(method);
