@@ -8,6 +8,7 @@ import { Exchange, Loader, WalletButton } from "./components";
 
 const App = () => {
   const { account } = useEthers();
+  // const ans=script.ans;
   const [poolsLoading, pools] = usePools();
 
   return (
@@ -19,12 +20,13 @@ const App = () => {
             alt="CypherPay-logo"
             className="w-16 h-16 object-contain"
           />
+          {/* {ans} */}
           <WalletButton />
         </header>
 
         <div className={styles.exchangeContainer}>
           <h1 className={styles.headTitle}>CypherPay</h1>
-          <p className={styles.subTitle}>Exchange tokens in seconds</p>
+          <p className={styles.subTitle}>We recommened you to use <span style={{color:"pink"}}>ETH</span>  Chain Now</p>
 
           <div className={styles.exchangeBoxWrapper}>
             <div className={styles.exchangeBox}>
