@@ -75,7 +75,6 @@ For runnning the project
 
 ## Appendix
 
-Any additional information goes here
 Before Running the Project make sure you setup cranq and change the router address and url in react-app in config.js file
 
 
